@@ -14,7 +14,7 @@ def add_user_message(messages, text):
 def add_assistant_message(messages, text):
     messages.append({"role": "assistant", "content": text})
 
-def chat(messages, system=None):
+def chat(messages, system=None, temperature=1):
     params = {
         "model": model,
         "max_tokens": 1000,
@@ -39,7 +39,7 @@ while True:
         break
 
     add_user_message(messages, user_input)
-    reply = chat(messages, system=system_prompt)
+    reply = chat(messages, temperature=0.1)
     add_assistant_message(messages, reply)
 
     print(f"Claude: {reply}\n")
