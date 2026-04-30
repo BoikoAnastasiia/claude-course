@@ -14,7 +14,7 @@ def add_user_message(messages, text):
 def add_assistant_message(messages, text):
     messages.append({"role": "assistant", "content": text})
 
-def chat(messages, system=None, temperature=1):
+def chat(messages, system=None):
     params = {
         "model": model,
         "max_tokens": 1000,
@@ -22,8 +22,11 @@ def chat(messages, system=None, temperature=1):
     }
     if system:
         params["system"] = system
-    message = anthropic.messages.create(**params)
-    return message.content[0].text
+    with anthropic.messages.stream(**params) as stream:
+        for text in stream.text_stream:
+            print(text, end="", flush=True)
+        print()
+        return stream.get_final_message().content[0].text
 
 
 system_prompt = "You are a helpful assistant that responds only in pirate speak."
@@ -39,7 +42,7 @@ while True:
         break
 
     add_user_message(messages, user_input)
-    reply = chat(messages, temperature=0.1)
+    print("Claude: ", end="", flush=True)
+    reply = chat(messages)
     add_assistant_message(messages, reply)
-
-    print(f"Claude: {reply}\n")
+    print()
