@@ -1,11 +1,14 @@
 [
   {
-    "task": "Write a Python function that extracts the AWS region from an S3 bucket URL in the format 's3://bucket-name.region.amazonaws.com'. Return the region name."
+    "task": "Parse an AWS S3 bucket name from an S3 URI in the format 's3://bucket-name/key/path' and extract just the bucket name",
+    "format": "regex"
   },
   {
-    "task": "Create a JSON object that represents an AWS IAM policy allowing read-only access to a specific S3 bucket named 'my-data-bucket'."
+    "task": "Create a JSON CloudFormation template snippet for an S3 bucket resource with versioning enabled and public access blocked",
+    "format": "json"
   },
   {
-    "task": "Write a regular expression that matches valid AWS access key IDs, which always start with 'AKIA' followed by 16 alphanumeric characters."
+    "task": "Write a Python function that takes an AWS IAM ARN string and returns the account ID, resource type, and resource name as separate values",
+    "format": "python"
   }
 ]
