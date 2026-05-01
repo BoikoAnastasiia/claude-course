@@ -70,6 +70,11 @@ Please generate 3 objects.
 def main():
     dataset = generate_dataset()
     print(json.dumps(dataset, indent=2))
+    
+    # Save to file
+    with open("dataset.json", "w") as f:
+        json.dump(dataset, f, indent=2)
+    
     return dataset
 
 if __name__ == "__main__":
