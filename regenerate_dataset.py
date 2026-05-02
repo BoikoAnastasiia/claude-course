@@ -41,7 +41,8 @@ Example output:
 [
     {
         "task": "Description of task",
-        "format": "json" or "python" or "regex"
+        "format": "json" or "python" or "regex",
+        "solution_criteria": "Criteria for the solution to be correct, and what it should include.",
     },
     ...additional
 ]

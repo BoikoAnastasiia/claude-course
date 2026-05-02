@@ -1,0 +1,65 @@
+[
+  {
+    "output": "# Marathon Training Nutrition Plan\n\n## Daily Calorie Target: 3000-3500 calories\n\n### Macronutrient Breakdown\n- **Carbohydrates**: 55-60% (410-525g) \u2014 fuel for endurance\n- **Protein**: 15-20% (112-175g) \u2014 muscle recovery\n- **Fat**: 20-25% (67-97g) \u2014 sustained energy\n\n---\n\n## Sample Daily Meal Structure\n\n### Breakfast (600-700 cal)\n- Oatmeal (80g dry) with banana and honey\n- 2-3 eggs or Greek yogurt\n- Toast with almond butter\n- Orange juice\n\n### Mid-Morning Snack (300-400 cal)\n- Energy bar or granola\n- Fruit (apple, dates, or berries)\n- Sports drink or electrolyte beverage\n\n### Lunch (800-900 cal)\n- Lean protein (chicken, fish, or lean beef): 150g\n- Pasta, rice, or sweet potato: 200g cooked\n- Vegetables (olive oil drizzle)\n- Whole grain bread\n\n### Pre-Workout Snack (200-300 cal)\n- Banana with peanut butter\n- Sports drink\n\n### Dinner (800-900 cal)\n- Protein source: 150g\n- Complex carbs: 200g\n- Vegetables and healthy fat\n\n### Evening Snack (200-300 cal)\n- Greek yogurt, granola, or banana\n\n---\n\n## Hydration Strategy\n- **Daily**: 3-4 liters water minimum\n- **During runs >90 min**: Sports drink (6-8% carbs)\n- **Post-run**: 500ml chocolate milk or electrolyte drink\n\n## Key Timing Tips\n- Carb-load 3-4 days before long runs\n- Eat 2-3 hours before training\n- Refuel within 30 minutes post-workout\n\nWould you like a more specific plan for particular training days?",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178 cm",
+        "weight": "72 kg",
+        "goal": "Marathon training - 3000+ calorie intake with carbohydrate loading and strategic hydration",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan contains exactly 3 meals and 2-3 snacks spanning one full day",
+        "Total daily calories meet or exceed 3000 with carbohydrates comprising 55-65% of total intake",
+        "Hydration timing specified at minimum 4 intervals with water/electrolyte recommendations",
+        "Format is concise and compact (under 300 words) with clear meal times and portion sizes"
+      ],
+      "task_description": "write consise and compact 1 day meal plan for a single athlete",
+      "scenario": "Testing with a high-endurance athlete (marathon runner) requiring 3000+ calories with emphasis on carbohydrate loading and hydration timing throughout the day"
+    },
+    "score": 6,
+    "reasoning": "The solution meets the core mandatory requirements: it contains 6 eating occasions (3 meals + 3 snacks), achieves 3300-3500 calories with 55-60% carbohydrates, and addresses hydration with multiple intervals and electrolyte recommendations. However, it significantly violates the 'concise and compact (under 300 words)' requirement, which is explicitly stated as a criterion. The hydration timing, while present, lacks the specificity of actual scheduled intervals throughout the day. The meal plan provides ranges and options rather than a definitive single-day plan with exact portions. These issues prevent a higher score despite meeting the primary caloric and macronutrient targets."
+  },
+  {
+    "output": "# Nutrition Plan for Soccer Performance & Muscle Maintenance\n\n## Daily Protein Targets\n- **~1.6-2.0g per kg bodyweight** = **115-144g daily**\n- Distributed across 4-5 meals for optimal muscle protein synthesis\n\n## Complete Protein Sources (All 9 Essential Amino Acids)\n\n**Legume-Grain Combinations:**\n- Lentils + rice\n- Chickpeas + quinoa\n- Black beans + whole wheat\n\n**Standalone Complete Proteins:**\n- Quinoa (all meals)\n- Hemp seeds, pumpkin seeds\n- Spirulina\n- Soy products (tofu, tempeh, edamame)\n\n## Sample Daily Structure\n\n| Meal | Example |\n|------|---------|\n| **Breakfast** | Oatmeal + hemp seeds + berries + almond butter |\n| **Snack 1** | Hummus + whole grain bread + vegetables |\n| **Lunch** | Tempeh stir-fry + brown rice + leafy greens |\n| **Snack 2** | Trail mix (seeds, nuts) + fruit |\n| **Dinner** | Lentil curry + quinoa + roasted vegetables |\n\n## Critical Micronutrients\n\n**Iron (vegan sources):**\n- Fortified cereals, lentils, spinach, pumpkin seeds\n- Pair with vitamin C for absorption (citrus, tomatoes, peppers)\n\n**B12 (essential supplementation):**\n- Take B12 supplement (cyanocobalamin) 2000mcg weekly, OR\n- Use B12-fortified plant milks/nutritional yeast daily\n\n**Other key minerals:**\n- Calcium: fortified plant milks, tofu, tahini\n- Zinc: seeds, legumes, whole grains\n\nWould you like specific meal plans or training day nutrition strategies?",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178",
+        "weight": "72",
+        "goal": "soccer performance and muscle maintenance",
+        "restrictions": "vegan, requires complete amino acid profile, needs iron and B12 considerations"
+      },
+      "solution_criteria": [
+        "Meal plan totals approximately 2200 calories across breakfast, lunch, dinner, and snacks",
+        "All meals are vegan with complete protein sources (legumes, tofu, nuts, seeds, grains) providing all 9 essential amino acids",
+        "Includes iron-rich foods (lentils, spinach, fortified cereals) and B12 supplementation or fortified foods explicitly mentioned",
+        "Plan is presented in concise, compact format suitable for single-day reference"
+      ],
+      "task_description": "write consise and compact 1 day meal plan for a single athlete",
+      "scenario": "Testing with a sport-specific dietary restriction (vegan soccer player) requiring 2200 calories while maintaining complete amino acid profiles and iron/B12 supplementation considerations"
+    },
+    "score": 5,
+    "reasoning": "The solution demonstrates strong understanding of vegan athletic nutrition and addresses all dietary restrictions comprehensively. The protein targets are correctly calculated, and B12/iron considerations are explicitly handled with practical solutions. However, there is a MANDATORY requirement violation: the criteria explicitly state 'Meal plan totals approximately 2200 calories across breakfast, lunch, dinner, and snacks.' The solution provides a meal structure and examples but never quantifies calories or verifies the 2200-calorie target. Without specific portions and calorie calculations, it's impossible to confirm this mandatory requirement is met. The solution reads more as a framework/template than a complete 1-day meal plan. While the content quality is high, the lack of caloric specification and portion sizes prevents full compliance with the stated criteria."
+  },
+  {
+    "output": "# Nutrition Plan for Muscle Gain & Strength\n\n## Daily Calorie Target\n**~3,000-3,300 calories/day** (slight surplus for muscle growth)\n\n## Macronutrient Breakdown\n\n| Macro | Amount | Details |\n|-------|--------|---------|\n| **Protein** | 170-190g | ~2.0-2.2g per kg bodyweight |\n| **Carbs** | 375-420g | ~4.4-5g per kg (fuel for training) |\n| **Fat** | 80-110g | ~0.9-1.3g per kg (hormone support) |\n\n## Food Priorities\n\n**Protein Sources:**\n- Chicken, turkey, lean beef\n- Fish (salmon, cod)\n- Eggs & Greek yogurt\n- Cottage cheese\n- Legumes & tofu\n\n**Carbs (around training):**\n- Oats, rice, potatoes\n- Whole grain bread & pasta\n- Fruit (bananas, berries)\n- Rice cakes, honey\n\n**Healthy Fats:**\n- Olive oil, nuts, nut butters\n- Avocados, seeds\n- Fatty fish\n- Eggs\n\n## Meal Timing Tips\n- Eat protein + carbs **within 2 hours post-workout**\n- Distribute protein across 4-5 meals\n- Carbs highest around training sessions\n\n## Monitoring\nTrack weight weekly. If not gaining 0.5-1 kg/month, increase calories by 200-300.\n\n**Would you like a sample daily meal plan?**",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178 cm",
+        "weight": "85 kg",
+        "goal": "muscle gain and strength development for weightlifting",
+        "restrictions": "none"
+      },
+      "solution_criteria": [
+        "Meal plan contains 4-5 meals totaling approximately 2500 calories",
+        "Protein distributed across meals with minimum 30g per meal for optimal muscle synthesis",
+        "Macronutrient ratio approximately 40% protein, 40% carbohydrates, 20% fats",
+        "Plan is presented in concise, compact format suitable for quick daily reference"
+      ],
+      "task_description": "write consise and compact 1 day meal plan for a single athlete",
+      "scenario": "Testing with a strength-focused athlete (weightlifter) requiring 2500 calories with specific protein distribution across 4-5 meals and macro-nutrient ratios for muscle recovery"
+    },
+    "score": 2,
+    "reasoning": "The solution provides excellent nutritional guidance and framework but fundamentally fails to deliver what was requested: a concrete 1-day meal plan. The task explicitly asks for a 'meal plan' (implying specific meals), and the criteria require 4-5 meals totaling ~2,500 calories with specific protein distribution and macro ratios. The solution instead provides only general principles and food categories, requiring the user to construct their own meals. Additionally, the proposed calorie target (3,000-3,300) and macro ratios do not align with the stated criteria. The closing question 'Would you like a sample daily meal plan?' explicitly confirms the solution is incomplete. While the nutritional science is sound, it does not meet the mandatory requirement of providing an actual meal plan in a compact, ready-to-use format."
+  }
+]

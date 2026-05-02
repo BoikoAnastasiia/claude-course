@@ -71,6 +71,7 @@ Provide your evaluation as a structured JSON object with the following fields, i
 - "weaknesses": An array of 1-3 key areas for improvement
 - "reasoning": A concise explanation of your overall assessment
 - "score": A number between 1-10
+- "solution_met": Whether the solution meets the solution criteria.
 
 Respond with JSON. Keep your response concise and direct.
 Example response shape:
@@ -78,7 +79,8 @@ Example response shape:
     "strengths": string[],
     "weaknesses": string[],
     "reasoning": string,
-    "score": number
+    "score": number,
+    "solution_met": bool
 }}
     """
 
@@ -95,6 +97,7 @@ def run_test_case(test_case):
     
     model_grade = grade_by_model(test_case, output)
     model_score = model_grade["score"]
+    solution_met = model_grade["solution_met"]
     reasoning = model_grade["reasoning"]
     syntax_score = grade_syntax(output, test_case)
 
@@ -105,6 +108,7 @@ def run_test_case(test_case):
         "test_case": test_case,
         "score": score, 
         "reasoning": reasoning,
+        "solution_met": solution_met
     }
 
 
