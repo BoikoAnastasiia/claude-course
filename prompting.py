@@ -439,12 +439,20 @@ DATASET_FILE = "dataset.json"
 # `prompt_inputs` is a dict with the keys you listed in PROMPT_INPUTS_SPEC above.
 def run_prompt(prompt_inputs):
     prompt = f"""
-    What should this person eat?
+    Generate a one day meal plan for a single athlete based on the following information:
 
     Height: {prompt_inputs["height"]}
     Weight: {prompt_inputs["weight"]}
     Goal: {prompt_inputs["goal"]}
     Restrictions: {prompt_inputs["restrictions"]}
+
+    Guidelines:
+    1. Include accurate daily calorie amount
+    2. Show protein, fat, and carb amounts  
+    3. Specify when to eat each meal
+    4. Use only foods that fit restrictions
+    5. List all portion sizes in grams
+    6. Keep budget-friendly if mentioned
     """
     messages = []
     add_user_message(messages, prompt)
