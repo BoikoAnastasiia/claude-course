@@ -439,20 +439,47 @@ DATASET_FILE = "dataset.json"
 # `prompt_inputs` is a dict with the keys you listed in PROMPT_INPUTS_SPEC above.
 def run_prompt(prompt_inputs):
     prompt = f"""
-    Generate a one day meal plan for a single athlete based on the following information:
+    Generate a concise one-day meal plan for a single athlete.
 
+    <athlete_profile>
     Height: {prompt_inputs["height"]}
     Weight: {prompt_inputs["weight"]}
     Goal: {prompt_inputs["goal"]}
     Restrictions: {prompt_inputs["restrictions"]}
+    </athlete_profile>
 
-    Guidelines:
-    1. Include accurate daily calorie amount
-    2. Show protein, fat, and carb amounts  
-    3. Specify when to eat each meal
-    4. Use only foods that fit restrictions
-    5. List all portion sizes in grams
-    6. Keep budget-friendly if mentioned
+    <requirements>
+    1. Calculate appropriate daily calories for the athlete's height, weight, and specific goal
+    2. Include total daily protein, fat, and carb amounts
+    3. Plan 3-5 meals/snacks with exact timing
+    4. List all portion sizes in grams
+    5. Use only foods that respect the dietary restrictions
+    </requirements>
+
+    Follow this example format exactly:
+
+    <example>
+    <sample_input>
+    Height: 180 cm | Weight: 75 kg
+    Goal: Marathon runner preparing for race day — needs carb-loading, 3,500+ calories
+    Restrictions: Vegetarian, no nuts
+    </sample_input>
+    <sample_output>
+    # Marathon Race-Day Carb-Loading Meal Plan
+    **Profile:** 180 cm, 75 kg | Vegetarian | No Nuts | Target: 3,500 kcal
+
+    | Time | Meal | Calories |
+    |------|------|----------|
+    | 7:00 AM | Oatmeal Power Bowl (oats 100g, banana 150g, honey 40g, sunflower butter 30g, low-fat milk 200ml) | 850 |
+    | 10:00 AM | Smoothie Bowl (Greek yogurt 150g, rice pasta 80g, berries 100g, honey 25g, milk 150ml) | 420 |
+    | 1:00 PM | Pasta Lentil Bolognese (whole wheat pasta 250g, red lentils 150g, tomato sauce 200g, olive oil 15ml, parmesan 25g) | 950 |
+    | 4:00 PM | Rice Cakes & Fruit (rice cakes 60g, jam 50g, dates 80g, low-fat yogurt 100g) | 480 |
+    | 7:00 PM | Chickpea Curry & Rice (basmati rice 200g, chickpeas 150g, lite coconut milk 100ml, vegetables 200g, olive oil 10ml, naan 80g) | 800 |
+
+    **Daily Totals:** 3,500 kcal | Carbs: 568g (65%) | Protein: 108g (12%) | Fat: 60g (15%)
+    **Hydration:** 2.5–3 L water throughout the day
+    </sample_output>
+    </example>
     """
     messages = []
     add_user_message(messages, prompt)

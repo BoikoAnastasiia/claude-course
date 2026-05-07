@@ -1,50 +1,50 @@
 [
   {
     "prompt_inputs": {
-      "height": "178",
-      "weight": "72",
-      "goal": "maintain performance and energy for soccer training and match day",
-      "restrictions": "vegan (no animal products)"
-    },
-    "solution_criteria": [
-      "Meal plan is formatted as a single day with 3-4 distinct meals/snacks that are concise and compact",
-      "All foods and meals are 100% plant-based with no animal products",
-      "Includes adequate protein sources (legumes, tofu, nuts, seeds) to support athletic performance for a 72kg soccer player",
-      "Total daily calories and macronutrient distribution are appropriate for match-day energy needs without excessive detail"
-    ],
-    "task_description": "write consise and compact 1 day meal plan for a single athlete",
-    "scenario": "Testing with a sport-specific dietary restriction scenario (vegan soccer player) requiring complete plant-based nutrition that meets performance needs within caloric constraints"
-  },
-  {
-    "prompt_inputs": {
-      "height": "178 cm",
-      "weight": "85 kg",
-      "goal": "Maximize strength gains and muscle recovery for weightlifting competition prep",
-      "restrictions": "None"
-    },
-    "solution_criteria": [
-      "Meal plan contains exactly 4-5 meals distributed throughout the day with clear timing",
-      "Total daily protein is at least 1.7g per kg of body weight (145g minimum) with protein distributed across meals",
-      "Includes pre-workout and post-workout nutrition strategically timed around training sessions",
-      "Plan is presented in concise, scannable format suitable for quick daily reference"
-    ],
-    "task_description": "write consise and compact 1 day meal plan for a single athlete",
-    "scenario": "Testing with a strength/power sport athlete (weightlifter) needing balanced macros focused on protein intake and recovery-focused meal timing"
-  },
-  {
-    "prompt_inputs": {
-      "height": "178 cm",
+      "height": "175 cm",
       "weight": "70 kg",
-      "goal": "Marathon runner preparing for race day - needs 3,500+ calories with carbohydrate loading",
-      "restrictions": "No dairy, no nuts"
+      "goal": "maintain energy for casual jogging 3x per week",
+      "restrictions": "no nuts, no dairy, plant-based only"
     },
     "solution_criteria": [
-      "Meal plan totals 3,500+ calories with at least 60% from carbohydrates (210g+)",
-      "Includes 4-5 meals/snacks spread throughout the day with sustained energy foods (oats, rice, pasta, bananas, energy gels)",
-      "Plan is concise, formatted compactly (under 400 tokens), and respects all dietary restrictions",
-      "Provides practical macronutrient breakdown and hydration guidance appropriate for endurance athlete"
+      "Meal plan covers exactly 1 day with breakfast, lunch, dinner, and 1-2 snacks",
+      "All meals are plant-based with no nuts or dairy products",
+      "Provides adequate protein (approximately 50-60g) and carbohydrates for moderate athletic activity",
+      "Plan is concise and compact, presented in clear, easy-to-scan format"
     ],
     "task_description": "write consise and compact 1 day meal plan for a single athlete",
-    "scenario": "Testing with a high-endurance athlete (marathon runner) requiring 3,500+ calories with emphasis on carbohydrate loading and sustained energy foods"
+    "scenario": "Testing with an amateur athlete (casual jogger) with moderate nutritional needs, food allergies (nuts, dairy), and preference for plant-based options"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "68 kg",
+      "goal": "Marathon training - high-endurance performance with carbohydrate loading",
+      "restrictions": "Gluten-free"
+    },
+    "solution_criteria": [
+      "Meal plan covers all meals for one day (breakfast, lunch, dinner, snacks) in concise format",
+      "Includes high carbohydrate content (55-65% of calories) appropriate for marathon training",
+      "All foods and meals are gluten-free with no wheat, barley, or rye products",
+      "Calorie intake aligns with high-endurance athlete needs (approximately 2,800-3,200 calories for a 68kg runner)"
+    ],
+    "task_description": "write consise and compact 1 day meal plan for a single athlete",
+    "scenario": "Testing with a high-endurance athlete (marathon runner) requiring high calorie intake and carbohydrate loading, with specific dietary restrictions like gluten-free requirements"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "82 kg",
+      "goal": "muscle recovery and strength gains with budget constraints and minimal cooking time",
+      "restrictions": "no shellfish, prefers simple recipes under 15 minutes prep per meal"
+    },
+    "solution_criteria": [
+      "Meal plan contains at least 4 meals/snacks with minimum 25g protein per meal to support muscle recovery",
+      "All meals are realistic to prepare in under 15 minutes with minimal cooking equipment",
+      "Plan includes budget-friendly protein sources (eggs, canned tuna, Greek yogurt, chicken breast, legumes)",
+      "Plan is presented in a concise, single-day format with clear timing and macronutrient focus"
+    ],
+    "task_description": "write consise and compact 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength/power athlete (weightlifter) needing protein-focused nutrition for muscle recovery, with budget constraints and limited cooking time"
   }
 ]
