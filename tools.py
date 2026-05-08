@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from anthropic import Anthropic
 from datetime import datetime, timedelta
+from anthropic.types import ToolParam
 
 load_dotenv()
 
@@ -18,7 +19,22 @@ def add_assistant_message(messages, text):
     messages.append(assistant_message)
 
 
-def chat(messages, system=None, temperature=1.0, stop_sequences=[]):
+def execute_tool(name, inputs):
+    registry = {
+        "get_current_datetime": get_current_datetime,
+        "add_duration_to_datetime": add_duration_to_datetime,
+        "set_reminder": set_reminder,
+    }
+    fn = registry.get(name)
+    if not fn:
+        return f"Unknown tool: {name}"
+    try:
+        return str(fn(**inputs))
+    except Exception as e:
+        return f"Error: {e}"
+
+
+def chat(messages, system=None, temperature=1.0, stop_sequences=[], tools=None):
     params = {
         "model": model,
         "max_tokens": 1000,
@@ -28,13 +44,49 @@ def chat(messages, system=None, temperature=1.0, stop_sequences=[]):
     }
     if system:
         params["system"] = system
-    message = client.messages.create(**params)
-    return message.content[0].text
+    if tools:
+        params["tools"] = tools
+
+    while True:
+        response = client.messages.create(**params)
+
+        if response.stop_reason == "end_turn":
+            return next(b.text for b in response.content if b.type == "text")
+
+        if response.stop_reason == "tool_use":
+            tool_uses = [b for b in response.content if b.type == "tool_use"]
+            messages.append({"role": "assistant", "content": response.content})
+
+            results = []
+            for tu in tool_uses:
+                results.append({
+                    "type": "tool_result",
+                    "tool_use_id": tu.id,
+                    "content": execute_tool(tu.name, tu.input),
+                })
+            messages.append({"role": "user", "content": results})
+            params["messages"] = messages
 
 def get_current_datetime(datetime_format="%Y-%m-%d %H:%M:%S"):
     if not datetime_format:
         raise ValueError("datetime_format is required")
     return datetime.now().strftime(datetime_format)
+
+get_current_datetime_schema = ToolParam({
+    "name": "get_current_datetime",
+    "description": "Returns the current datetime in the specified format",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "datetime_format": {
+                "type": "string",
+                "description": "The format of the datetime to return",
+                "default": "%Y-%m-%d %H:%M:%S",
+            },
+        },
+        "required": [],
+    },
+})
 
 def add_duration_to_datetime(
     datetime_str, duration=0, unit="days", input_format="%Y-%m-%d"
@@ -162,3 +214,8 @@ batch_tool_schema = {
         "required": ["invocations"],
     },
 }
+
+messages = []
+add_user_message(messages, "What is the current datetime?")
+response = chat(messages, system="You are a helpful assistant that can use tools to get the current datetime.", tools=[get_current_datetime_schema])
+print(response)
